@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deps Contabilidade LTDA — Venda Nova do Imigrante/ES</title>
+    <meta name="description" content="Escritório de contabilidade em Venda Nova do Imigrante/ES. Assessoria contábil, fiscal, trabalhista e empresarial desde 2014.">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0d47a1;
+            --primary-dark: #093170;
+            --primary-light: #1565c0;
+            --accent: #ff8f00;
+            --gray-100: #f8f9fa;
+            --gray-200: #e9ecef;
+            --gray-700: #495057;
+            --gray-900: #212529;
+        }
+
+        * { font-family: 'Inter', sans-serif; }
+
+        body { color: var(--gray-700); scroll-behavior: smooth; }
+
+        .navbar {
+            background: #fff;
+            box-shadow: 0 2px 12px rgba(0,0,0,.06);
+            transition: all .3s;
+        }
+        .navbar-brand { font-weight: 700; font-size: 1.35rem; color: var(--primary) !important; }
+        .navbar-brand span { color: var(--accent); }
+        .nav-link { font-weight: 500; color: var(--gray-700) !important; padding: .6rem 1rem !important; }
+        .nav-link:hover, .nav-link.active { color: var(--primary) !important; }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(13,71,161,.92), rgba(9,49,112,.95)),
+                        url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 140px 0 100px;
+            position: relative;
+        }
+        .hero h1 { font-weight: 700; font-size: 2.8rem; line-height: 1.2; }
+        .hero p { font-size: 1.15rem; opacity: .92; max-width: 600px; }
+
+        .section-title { font-weight: 700; color: var(--gray-900); font-size: 2rem; margin-bottom: .5rem; }
+        .section-subtitle { color: var(--gray-700); font-size: 1.05rem; }
+
+        .card-service {
+            border: none;
+            border-radius: 14px;
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0,0,0,.06);
+            transition: transform .3s, box-shadow .3s;
+            height: 100%;
+        }
+        .card-service:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(13,71,161,.14); }
+        .card-service .icon-box {
+            width: 60px; height: 60px;
+            background: rgba(13,71,161,.08);
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem; color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .stat-box {
+            background: #fff;
+            border-radius: 14px;
+            padding: 1.8rem 1rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,.06);
+            text-align: center;
+            height: 100%;
+        }
+        .stat-box .number { font-size: 2rem; font-weight: 700; color: var(--primary); }
+        .stat-box .label { font-size: .9rem; color: var(--gray-700); margin-top: .3rem; }
+
+        .about-img {
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,.12);
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+        }
+
+        .bg-soft { background: var(--gray-100); }
+
+        .contact-item { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.5rem; }
+        .contact-item .ci-icon {
+            width: 48px; height: 48px; min-width: 48px;
+            background: rgba(13,71,161,.08);
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--primary); font-size: 1.25rem;
+        }
+
+        .map-container {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,.1);
+            height: 380px;
+        }
+        .map-container iframe { width: 100%; height: 100%; border: 0; }
+
+        .footer {
+            background: var(--gray-900);
+            color: rgba(255,255,255,.7);
+            padding: 50px 0 20px;
+            font-size: .92rem;
+        }
+        .footer h5 { color: #fff; font-weight: 600; margin-bottom: 1rem; }
+        .footer a { color: rgba(255,255,255,.7); text-decoration: none; }
+        .footer a:hover { color: #fff; }
+
+        .badge-custom {
+            background: rgba(13,71,161,.08);
+            color: var(--primary);
+            font-weight: 500;
+            padding: .4rem .9rem;
+            border-radius: 50px;
+            font-size: .82rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.9rem; }
+            .hero { padding: 110px 0 70px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <i class="bi bi-calculator me-1"></i> DEPs <span>Contabilidade</span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <i class="bi bi-list fs-2"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+                <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+                <li class="nav-item"><a class="nav-link" href="#empresa">Empresa</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section id="inicio" class="hero">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <span class="badge-custom d-inline-block mb-3">CRC: ES-004848/O</span>
+                <h1 class="mb-4">Contabilidade com <span style="color:#ff8f00;">confiança</span> e resultados</h1>
+                <p class="mb-4">
+                    Assessoria contábil, fiscal, trabalhista e empresarial para micro, pequenas e médias empresas
+                    de Venda Nova do Imigrante e região. Desde 2014 ao lado do seu negócio.
+                </p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="#contato" class="btn btn-warning btn-lg px-4 fw-semibold" style="background:var(--accent);border:none;color:#fff;">
+                        <i class="bi bi-whatsapp me-2"></i>Fale Conosco
+                    </a>
+                    <a href="#servicos" class="btn btn-outline-light btn-lg px-4">
+                        Nossos Serviços
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STATS -->
+<section class="py-5" style="margin-top:-50px;">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-3 col-6">
+                <div class="stat-box">
+                    <i class="bi bi-calendar-check fs-2 text-primary mb-2"></i>
+                    <div class="number">2014</div>
+                    <div class="label">Ano de Fundação</div>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="stat-box">
+                    <i class="bi bi-people fs-2 text-primary mb-2"></i>
+                    <div class="number">3</div>
+                    <div class="label">Sócios Administradores</div>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="stat-box">
+                    <i class="bi bi-building fs-2 text-primary mb-2"></i>
+                    <div class="number">100%</div>
+                    <div class="label">Empresa Ativa</div>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="stat-box">
+                    <i class="bi bi-file-earmark-text fs-2 text-primary mb-2"></i>
+                    <div class="number">Simples</div>
+                    <div class="label">Regime Tributário</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre" class="py-5">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6">
+                <h2 class="section-title">Sobre a Deps Contabilidade</h2>
+                <p class="section-subtitle mb-4">
+                    Há mais de uma década ajudando empresas a crescer com segurança e conformidade legal.
+                </p>
+                <p>
+                    A <strong>Deps Contabilidade LTDA</strong> (CNPJ 20.608.148/0001-10) foi fundada em
+                    <strong>08 de julho de 2014</strong> na cidade de <strong>Venda Nova do Imigrante, Espírito Santo</strong>.
+                    Desde então, atuamos como parceiros estratégicos de nossos clientes, oferecendo serviços
+                    contábeis completos com atendimento personalizado e foco na saúde financeira de cada negócio.
+                </p>
+                <p>
+                    Nossa equipe é liderada pelos sócios-administradores <strong>Celio Deps Almeida</strong>,
+                    <strong>Everton Muciaccia Almeida</strong> e <strong>Renan Muciaccia Almeida</strong>,
+                    profissionais comprometidos com a excelência técnica e a ética profissional.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mt-3">
+                    <span class="badge-custom"><i class="bi bi-check-circle me-1"></i>Situação Ativa</span>
+                    <span class="badge-custom"><i class="bi bi-check-circle me-1"></i>Micro Empresa</span>
+                    <span class="badge-custom"><i class="bi bi-check-circle me-1"></i>Sociedade Limitada</span>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=800&q=80"
+                     alt="Escritório de contabilidade" class="about-img">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos" class="py-5 bg-soft">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Nossos Serviços</h2>
+            <p class="section-subtitle">Soluções contábeis completas para o seu negócio</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="card-service p-4">
+                    <div class="icon-box"><i class="bi bi-calculator"></i></div>
+                    <h5 class="fw-semibold">Contabilidade Geral</h5>
+                    <p class="mb-0 small">Escrituração contábil completa, balanços patrimoniais, demonstrações de resultados e obrigações acessórias.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card-service p-4">
+                    <div class="icon-box"><i class="bi bi-receipt"></i></div>
+                    <h5 class="fw-semibold">Assessoria Fiscal</h5>
+                    <p class="mb-0 small">Apuração de impostos, planejamento tributário, emissão de guias e acompanhamento do Simples Nacional.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card-service p-4">
+                    <div class="icon-box"><i class="bi bi-people"></i></div>
+                    <h5 class="fw-semibold">Departamento Pessoal</h5>
+                    <p class="mb-0 small">Folha de pagamento, admissões e demissões, férias, 13º salário, eSocial e obrigações trabalhistas.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card-service p-4">
+                    <div class="icon-box"><i class="bi bi-briefcase"></i></div>
+                    <h5 class="fw-semibold">Abertura de Empresas</h5>
+                    <p class="mb-0 small">Constituição, alteração e encerramento de empresas. Escolha do melhor regime tributário e viabilidade.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card-service p-4">
+                    <div class="icon-box"><i class="bi bi-bar-chart"></i></div>
+                    <h5 class="fw-semibold">Consultoria Empresarial</h5>
+                    <p class="mb-0 small">Análise de indicadores, planejamento financeiro e orientação estratégica para tomada de decisões.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card-service p-4">
+                    <div class="icon-box"><i class="bi bi-gear"></i></div>
+                    <h5 class="fw-semibold">Serviços Administrativos</h5>
+                    <p class="mb-0 small">Serviços combinados de escritório e apoio administrativo para otimizar a operação da sua empresa.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EMPRESA / DADOS -->
+<section id="empresa" class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Dados da Empresa</h2>
+            <p class="section-subtitle">Informações cadastrais e registros oficiais</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div class="card-service p-4 h-100">
+                    <h5 class="fw-semibold mb-3"><i class="bi bi-building me-2 text-primary"></i>Informações de Registro</h5>
+                    <table class="table table-borderless small mb-0">
+                        <tr><td class="text-muted" style="width:45%;">CNPJ</td><td class="fw-semibold">20.608.148/0001-10</td></tr>
+                        <tr><td class="text-muted">Razão Social</td><td class="fw-semibold">Deps Contabilidade LTDA</td></tr>
+                        <tr><td class="text-muted">CRC</td><td class="fw-semibold">ES-004848/O</td></tr>
+                        <tr><td class="text-muted">Data de Abertura</td><td class="fw-semibold">08/07/2014</td></tr>
+                        <tr><td class="text-muted">Porte</td><td class="fw-semibold">Micro Empresa</td></tr>
+                        <tr><td class="text-muted">Natureza Jurídica</td><td class="fw-semibold">Sociedade Empresária Limitada</td></tr>
+                        <tr><td class="text-muted">Capital Social</td><td class="fw-semibold">R$ 150.000,00</td></tr>
+                        <tr><td class="text-muted">Situação</td><td><span class="badge bg-success">Ativa</span></td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card-service p-4 h-100">
+                    <h5 class="fw-semibold mb-3"><i class="bi bi-diagram-3 me-2 text-primary"></i>Atividades (CNAES)</h5>
+                    <div class="mb-4">
+                        <span class="badge-custom mb-2 d-inline-block">Principal</span>
+                        <p class="fw-semibold mb-1">69.20-6-01 — Atividades de contabilidade</p>
+                    </div>
+                    <div class="mb-4">
+                        <span class="badge-custom mb-2 d-inline-block">Secundária</span>
+                        <p class="fw-semibold mb-1">82.11-3-00 — Serviços combinados de escritório e apoio administrativo</p>
+                    </div>
+                    <h5 class="fw-semibold mb-3 mt-4"><i class="bi bi-person-badge me-2 text-primary"></i>Quadro de Sócios</h5>
+                    <ul class="list-unstyled small mb-0">
+                        <li class="mb-2"><i class="bi bi-person-fill me-2 text-primary"></i>Celio Deps Almeida — Sócio-Administrador</li>
+                        <li class="mb-2"><i class="bi bi-person-fill me-2 text-primary"></i>Everton Muciaccia Almeida — Sócio-Administrador</li>
+                        <li class="mb-2"><i class="bi bi-person-fill me-2 text-primary"></i>Renan Muciaccia Almeida — Sócio-Administrador</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato" class="py-5 bg-soft">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Entre em Contato</h2>
+            <p class="section-subtitle">Estamos prontos para atender você</p>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-5">
+                <div class="contact-item">
+                    <div class="ci-icon"><i class="bi bi-geo-alt"></i></div>
+                    <div>
+                        <h6 class="fw-semibold mb-1">Endereço</h6>
+                        <p class="mb-0 small">Avenida Lorenzo Zandonadi, 80 — Loja 02<br>Vila Betânea<br>Venda Nova do Imigrante — ES<br>CEP: 29375-000</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="ci-icon"><i class="bi bi-telephone"></i></div>
+                    <div>
+                        <h6 class="fw-semibold mb-1">Telefones</h6>
+                        <p class="mb-0 small">
+                            <a href="tel:+552835461540" class="text-decoration-none" style="color:var(--gray-700);">(28) 3546-1540</a><br>
+                            <a href="tel:+552835462568" class="text-decoration-none" style="color:var(--gray-700);">(28) 3546-2568</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="ci-icon"><i class="bi bi-envelope"></i></div>
+                    <div>
+                        <h6 class="fw-semibold mb-1">E-mail</h6>
+                        <p class="mb-0 small">
+                            <a href="mailto:depscontabil@uol.com.br" class="text-decoration-none" style="color:var(--gray-700);">depscontabil@uol.com.br</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="ci-icon"><i class="bi bi-clock"></i></div>
+                    <div>
+                        <h6 class="fw-semibold mb-1">Horário</h6>
+                        <p class="mb-0 small">Segunda a sexta — 09:00 às 18:00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps?q=Avenida+Lorenzo+Zandonadi,+80,+Venda+Nova+do+Imigrante,+ES,+29375-000&output=embed"
+                        allowfullscreen
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <p class="small text-muted mt-3 mb-0">
+                    <i class="bi bi-info-circle me-1"></i>
+                    Para correspondência: Deps Contabilidade LTDA — Avenida Lorenzo Zandonadi 80, Loja 02, Vila Betânea, Venda Nova do Imigrante — ES, 29375-000
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <h5><i class="bi bi-calculator me-1"></i> Deps Contabilidade</h5>
+                <p class="small mb-2">Assessoria contábil, fiscal, trabalhista e empresarial em Venda Nova do Imigrante/ES desde 2014.</p>
+                <p class="small mb-0">CNPJ: 20.608.148/0001-10<br>CRC: ES-004848/O</p>
+            </div>
+            <div class="col-lg-4">
+                <h5>Links Rápidos</h5>
+                <ul class="list-unstyled small">
+                    <li class="mb-1"><a href="#inicio">Início</a></li>
+                    <li class="mb-1"><a href="#sobre">Sobre Nós</a></li>
+                    <li class="mb-1"><a href="#servicos">Serviços</a></li>
+                    <li class="mb-1"><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4">
+                <h5>Contato</h5>
+                <p class="small mb-1"><i class="bi bi-geo-alt me-2"></i>Avenida Lorenzo Zandonadi, 80 — Loja 02</p>
+                <p class="small mb-1"><i class="bi bi-telephone me-2"></i>(28) 3546-1540</p>
+                <p class="small mb-1"><i class="bi bi-envelope me-2"></i>depscontabil@uol.com.br</p>
+            </div>
+        </div>
+        <hr style="border-color:rgba(255,255,255,.1);" class="my-4">
+        <p class="text-center small mb-0">&copy; 2025 Deps Contabilidade LTDA. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+        const nav = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            nav.style.boxShadow = '0 4px 20px rgba(0,0,0,.1)';
+        } else {
+            nav.style.boxShadow = '0 2px 12px rgba(0,0,0,.06)';
+        }
+    });
+</script>
+</body>
+</html>
